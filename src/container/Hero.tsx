@@ -4,7 +4,13 @@ import { movies } from "@/constants";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const Hero = () => {
+import type { RefObject } from "react";
+
+interface Props{
+  triggerRef: RefObject<HTMLDivElement | null>;
+}
+
+const Hero = ({triggerRef}: Props) => {
   const [itemActive, setItemActive] = useState<number>(0)
   const corousal = [movies[itemActive]]
 
@@ -38,6 +44,7 @@ const Hero = () => {
       className="relative -mx-7 flex overflow-x-hidden test"
       tabIndex={0}
       onKeyDown={handleKeyDown} 
+      ref={triggerRef}
     >
       {corousal.map((movie, i) => (
         <div
@@ -80,7 +87,7 @@ const Hero = () => {
             </p>
             <div className="flex w-full items-center md:gap-6 gap-3 z-50 mt-3">
               <Button className="md:font-medium max-md:text-sm tracking-wide bg-yellow-300 md:px-7 text-neutral-900 hover:bg-yellow-400 border-none hover:text-black"label='Tonton' />
-              <Button className="md:font-medium max-md:text-sm tracking-wide bg-transparent border-white md:px-5" label="Download"/>
+              <Button className="md:font-medium max-md:text-sm tracking-wide md:px-5 border-white" label="Download" variant="outline" />
             </div>
           </div>
         </div>
