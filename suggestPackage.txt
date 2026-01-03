@@ -1,0 +1,4 @@
+class-variance-autority
+framer motion
+next-theme
+tw-merge
