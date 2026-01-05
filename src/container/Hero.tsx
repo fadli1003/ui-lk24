@@ -51,6 +51,7 @@ const Hero = ({triggerRef}: Props) => {
           key={i}
           className={`bg-[url('${movie.thumbnail}')] bg-no-repeat bg-cover bg-center min-w-screen grow`}
         >
+          <img src={movie.thumbnail} alt="thumbnail" />
           <div className="md:w-[50%] sm:w-[80%] absolute md:top-[45%] top-[50%] flex flex-col lg:gap-4 gap-2.5 items-start lg:pl-20 pl-15 max-sm:px-5 text-gray-300">
             <h3 className="h3 uppercase xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-black md:text-transparent tracking-widest">
               {movie.name}

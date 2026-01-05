@@ -1,3 +1,5 @@
+import backgroundImage from "@/assets/backgroundImage.png";
+
 interface Movie {
   name: string;
   genre: string;
@@ -14,7 +16,7 @@ export const movies: Movie[] = [
     year: "2021",
     age: "13+",
     industry: "hollywood",
-    thumbnail: '/src/assets/assets/backgroundImage.png',
+    thumbnail: backgroundImage,
   },
   {
     name: "middle game",
@@ -22,7 +24,7 @@ export const movies: Movie[] = [
     year: "2021",
     age: "13+",
     industry: "bolywood",
-    thumbnail: '/src/assets/assets/backgroundImage.png',
+    thumbnail: backgroundImage,
   },
   {
     name: "end game",
@@ -30,7 +32,7 @@ export const movies: Movie[] = [
     year: "2021",
     age: "13+",
     industry: "hollywood",
-    thumbnail: '/src/assets/assets/backgroundImage.png',
+    thumbnail: backgroundImage,
   },
 ];
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button2 from "./Button2";
 
 function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -38,6 +39,7 @@ function Testimonials() {
       <div className="flex gap-5">
         <button onClick={handlePrevClick}>Prev</button>
         <button onClick={handleNextClick}>Next</button>
+        <Button2 variant="secondary" className="cursor-pointer dark:hover:bg-blue-400" >jhon chena</Button2>
       </div>
     </div>
   );

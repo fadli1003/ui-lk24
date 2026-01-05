@@ -1,3 +1,4 @@
+import Testimonials from '@/components/Testimonials'
 import Header from '@/container/Header'
 import Hero from '@/container/Hero'
 import Movies from '@/container/Movies'
@@ -31,6 +32,7 @@ export const Home = () => {
       <main className='px-7 pb-6 flex min-h-screen flex-col'>
         <Hero triggerRef={triggerRef} />
         <Movies />
+        <Testimonials />
       </main>
     </>
   )

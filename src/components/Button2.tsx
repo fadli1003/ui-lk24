@@ -1,44 +1,30 @@
-import { useEffect, useState, type ButtonHTMLAttributes } from "react";
+import { cva } from 'class-variance-authority';
+import { type ButtonHTMLAttributes } from 'react';
 
-// interface Classes {
-//   primary: unknown;
-//   secondary: string;
-//   outline: string;
-// }
+type Classes = 'primary' | 'secondary' | 'outline';
 
-type Classes = "primary" | "secondary" | "outline";
+const classes = cva('rounded-full py-1.5 px-6', {
+	variants: {
+		variant: {
+			primary: "dark:text-neutral-800 dark:bg-neutral-200 bg-neutral-800 text-neutral-200",
+			secondary: 'bg-neutral-200 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200',
+			outline: 'bg-transparent text-foreground border border-border'
+		}
+	}});
 
 const Button2 = (
-  props: {
-    variant?: Classes;
-  } & ButtonHTMLAttributes<HTMLButtonElement>
+	props: {
+		variant: Classes;
+	} & ButtonHTMLAttributes<HTMLButtonElement>
 ) => {
+	const { variant, className, ...otherProps } = props;
 
-  const {variant , className, ...otherProps} = props;
-
-  const primary = ('dark:text-neutral-800 dark:bg-neutral-200 bg-neutral-800 text-neutral-200')
-  const secondary = ('bg-neutral-200 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200')
-  const outline = ('bg-transparent text-foreground border border-border')
-
-  const [classes, setClasses] = useState(primary)
-
-  useEffect (() => {
-    if(variant === "secondary"){
-      setClasses(secondary)
-    }else if(variant === "outline"){
-      setClasses(outline)
-    }else{
-      setClasses(primary)
-    }
-  }, [variant])
-
-
-  return (
-    <button 
-      className={`rounded-full py-1.5 px-6 ${classes} ${className}`}
-      {...otherProps}
-    />
-  )
+	return (
+		<button
+			className={classes({variant, className,})}
+			{...otherProps}
+		/>
+	);
 };
 
 export default Button2;

@@ -1,5 +1,5 @@
 {
-  "name": "fresh-react",
+  "name": "lk24-mern",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,10 +11,13 @@
   },
   "dependencies": {
     "axios": "^1.13.2",
+    "class-variance-authority": "^0.7.1",
+    "framer-motion": "^12.23.26",
     "lucide-react": "^0.561.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "react-router-dom": "^7.11.0"
+    "react-router-dom": "^7.11.0",
+    "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
