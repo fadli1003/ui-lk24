@@ -2,7 +2,7 @@ import Button from "@/components/Button";
 
 const Setting = () => {
   return (
-    <Button variants="secondary" className="h-screen" label="hallo" />
+    <Button variant="secondary" className="h-screen" label="hallo" />
   )
 };
 

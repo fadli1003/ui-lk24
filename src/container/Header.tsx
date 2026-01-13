@@ -18,15 +18,6 @@ const Header = ({pastHero}:{pastHero: unknown}) => {
     }
   };
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setIsScroll(window.scrollY > 540);
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
-
   const handleNavActive = (label: string) => {
     if(label === "home"){
       setNavActive("home")
@@ -43,8 +34,7 @@ const Header = ({pastHero}:{pastHero: unknown}) => {
     <header className={`header z-100 ${pastHero ? "" : "text-neutral-400"}`}>
       <Link
         to="/"
-        className={`text-2xl font-bold tracking-wider bg-linear-to-r bg-blue-700 to-amber-300 bg-clip-text relative 
-          ${pastHero ? "text-transparent" : "text-transparent"}`}
+        className={`text-2xl font-bold tracking-wider bg-linear-to-r bg-blue-700 to-amber-300 bg-clip-text relative text-transparent`}
       >
         LK24
       </Link>
@@ -68,7 +58,7 @@ const Header = ({pastHero}:{pastHero: unknown}) => {
             key={item.label}
             className={`dark:hover:text-blue-200 capitalize hover:text-white duration-300 
               ${navActive === item.label ? "text-white" : ""} 
-              ${navActive === item.label && pastHero ? "text-foregorund" : ""}
+              ${navActive === item.label && pastHero ? "dark:text-blue-400 text-gray-900" : ""}
             `}
           >
             {item.label}
@@ -86,10 +76,10 @@ const Header = ({pastHero}:{pastHero: unknown}) => {
         <div className="bg-gray-700 w-0.5 h-7" />
         <Link
           to="/login"
-          className={`duration-300 ${pastHero ? "hove:text-foreground" : "hover:text-white"}`}
+          className={`duration-300 ${pastHero ? "hover:text-foreground" : "hover:text-white"}`}
         >
-          <UserRound className="md:hidden" />
-          <span className="max-md:hidden">Login</span>
+            <UserRound className="md:hidden" />
+            <span className="max-md:hidden">Login</span>
         </Link>
       </div>
     </header>

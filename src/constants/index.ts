@@ -1,4 +1,6 @@
 import backgroundImage from "@/assets/backgroundImage.png";
+import thumbnail2 from "@/assets/img/tumbnail2.jpg"
+import thumbnail3 from "@/assets/img/tumbnail3.jpg"
 
 interface Movie {
   name: string;
@@ -24,7 +26,7 @@ export const movies: Movie[] = [
     year: "2021",
     age: "13+",
     industry: "bolywood",
-    thumbnail: backgroundImage,
+    thumbnail: thumbnail2,
   },
   {
     name: "end game",
@@ -32,7 +34,7 @@ export const movies: Movie[] = [
     year: "2021",
     age: "13+",
     industry: "hollywood",
-    thumbnail: backgroundImage,
+    thumbnail: thumbnail3,
   },
 ];
 

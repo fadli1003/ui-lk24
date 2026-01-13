@@ -39,12 +39,17 @@
   font-weight: 300;
   font-display: swap;
 }
-
 @import 'tailwindcss';
+/* @variant dark (&:where(.dark, .dark *));
+@variant light (&:where(:not(.dark), :not(.dark) *)); */
+
+
+/* @config '../tailwind.config.mjs'; */
 /* @import "tw-animate-css"; */
 
+@custom-variant dark (&:where(.dark, .dark *));
 /* @custom-variant dark (&:is(.dark *)); */
-@variant dark (&:where(.dark, .dark *));
+/* @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *)); */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -160,12 +165,19 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Tambahkan ini untuk memastikan media query benar-benar di-override */
+@media (prefers-color-scheme: dark) {
+  :root:not(.dark) {
+    /* Kosongkan atau paksa variabel ke light mode jika perlu */
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50 box-border;
   }
   html{
-    @apply scroll-smooth inset-0 p-0 duration-300;
+    @apply scroll-smooth inset-0 p-0 transition-colors duration-300;
     scrollbar-width: thin;
   }
   body {

@@ -25,7 +25,7 @@ const Hero = ({triggerRef}: Props) => {
   useEffect(() => {
     const timer = setInterval(() => {
       nextCorosal()
-    }, 3000)    
+    }, 5000)    
     
     return () => clearInterval(timer)
   })
@@ -41,7 +41,7 @@ const Hero = ({triggerRef}: Props) => {
   return (
     <section
       id="hero"
-      className="relative -mx-7 flex overflow-x-hidden test"
+      className="relative -mx-7 flex overflow-x-hidden h-[100vmin] test"
       tabIndex={0}
       onKeyDown={handleKeyDown} 
       ref={triggerRef}
@@ -49,10 +49,11 @@ const Hero = ({triggerRef}: Props) => {
       {corousal.map((movie, i) => (
         <div
           key={i}
-          className={`bg-[url('${movie.thumbnail}')] bg-no-repeat bg-cover bg-center min-w-screen grow`}
+          style={{backgroundImage: `url(${movie.thumbnail})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'cover'}}
+          className='min-w-screen duration-500 ease'
         >
-          <img src={movie.thumbnail} alt="thumbnail" />
-          <div className="md:w-[50%] sm:w-[80%] absolute md:top-[45%] top-[50%] flex flex-col lg:gap-4 gap-2.5 items-start lg:pl-20 pl-15 max-sm:px-5 text-gray-300">
+          {/* <img src={movie.thumbnail} alt="thumbnail" /> */}
+          <div className="md:w-[50%] sm:w-[80%] absolute md:top-[45%] top-[50%] flex flex-col lg:gap-4 gap-2.5 items-start lg:pl-20 pl-15 max-sm:px-5 dark:text-gray-300 text-blue-700">
             <h3 className="h3 uppercase xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-black md:text-transparent tracking-widest">
               {movie.name}
             </h3>
@@ -76,11 +77,11 @@ const Hero = ({triggerRef}: Props) => {
                 {movie.age}
               </Link>
             </div>
-            <p className="text-muted-foreground text-sm">
+            <p className="max-lg:hidden text-muted-foreground text-sm">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Expedita, alia&apos;s consequatur! Cum esse ipsam numquam
               necessitatibus modi.{" "}
-              <span className="max-lg:hidden">
+              <span >
                 Asperiores, fugit aliquid! Necessitatibus nesciunt corporis
                 voluptates. Exercitationem beatae reiciendis quod magni
                 sapiente?
