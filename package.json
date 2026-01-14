@@ -2,7 +2,7 @@
   "name": "lk24-mern",
   "author": "zhain",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@clerk/clerk-react": "^5.59.3",
     "axios": "^1.13.2",
     "class-variance-authority": "^0.7.1",
     "framer-motion": "^12.23.26",

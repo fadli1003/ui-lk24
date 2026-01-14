@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Menu, UserRound, XIcon } from "lucide-react";
 import ThemeButton from "@/components/ThemeButton";
 import { navItem } from "@/constants";
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
+
 
 type NavItem = "home" | "movie" | "popular" | "service";
 
@@ -74,13 +76,19 @@ const Header = ({pastHero}:{pastHero: unknown}) => {
           className="md:hidden cursor-pointer hover:text-foreground duration-300"
         />
         <div className="bg-gray-700 w-0.5 h-7" />
-        <Link
+        {/* <Link
           to="/login"
           className={`duration-300 ${pastHero ? "hover:text-foreground" : "hover:text-white"}`}
         >
             <UserRound className="md:hidden" />
             <span className="max-md:hidden">Login</span>
-        </Link>
+        </Link> */}
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </div>
     </header>
   );
