@@ -4,7 +4,7 @@ import Hero from '@/container/Hero'
 import Movies from '@/container/Movies'
 import { useEffect, useRef, useState } from 'react'
 
-export const Home = () => {
+const Home = () => {
   const [isPastHero, setIsPastHero] = useState(false);
     const triggerRef = useRef<HTMLDivElement>(null);
   
@@ -37,3 +37,5 @@ export const Home = () => {
     </>
   )
 }
+
+export default Home

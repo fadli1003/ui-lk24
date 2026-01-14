@@ -88,8 +88,8 @@ const Hero = ({triggerRef}: Props) => {
               </span>
             </p>
             <div className="flex w-full items-center md:gap-6 gap-3 z-50 mt-3">
-              <Button className="md:font-medium max-md:text-sm tracking-wide bg-yellow-300 md:px-7 text-neutral-900 hover:bg-yellow-400 border-none hover:text-black"label='Tonton' />
-              <Button className="md:font-medium max-md:text-sm tracking-wide md:px-5 border-white" label="Download" variant="outline" />
+              <Button className="md:font-medium max-md:text-sm tracking-wide bg-yellow-300 md:px-7 text-neutral-900 hover:bg-yellow-400 border-none hover:text-black" label='Tonton' />
+              <Button className="md:font-medium max-md:text-sm tracking-wide md:px-5 border-white bg-white/50 text-neutral-800" label="Download" variant="outline" />
             </div>
           </div>
         </div>
