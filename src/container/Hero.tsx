@@ -77,7 +77,7 @@ const Hero = ({triggerRef}: Props) => {
                 {movie.age}
               </Link>
             </div>
-            <p className="max-lg:hidden text-muted-foreground text-sm">
+            <p className="max-lg:hidden text-gray-300 text-sm text-justify bg-black/30 backdrop-blur-xs rounded-md p-2">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Expedita, alia&apos;s consequatur! Cum esse ipsam numquam
               necessitatibus modi.{" "}
