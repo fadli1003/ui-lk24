@@ -1,26 +1,13 @@
-import { type ReactNode } from "react";
+import { type ButtonHTMLAttributes } from "react";
 
 type Variant = 'primary' | 'secondary' | 'outline'; 
 
-type PageProps = {
-  otherProps: unknown;
-}
-
-const Button = ({
-  variant,
-  disabled,
-  className,
-  label,
-  children,
-  otherProps,
-}: {
-  variant?: Variant;
-  className?: string;
-  disabled?: boolean;
-  children?: ReactNode;
-  label?:string;
-  otherProps?: PageProps;
-}) => {
+const Button = (props: {
+  label?: string,
+  variant? : Variant
+} & ButtonHTMLAttributes<HTMLButtonElement>) => {
+  const { variant, disabled, className, label, children, ...otherProps } = props
+  
   const primary = "text-neutral-200 bg-neutral-950 hover:bg-black";
   const secondary = "text-neutral-900 bg-neutral-200 hover:bg-white";
   const outline = "bg-inherit hover:bg-white/20";

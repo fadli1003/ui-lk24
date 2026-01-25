@@ -4,8 +4,6 @@ import { ThemeContext } from '@/hooks/useTheme'
 export default function ThemeProvider(
 	{ children }: { children: React.ReactNode }
 ) {
-	// const [theme, setTheme] = useState<Theme>('light');
-
 	const initialTheme = () => {
 		const savedTheme = localStorage.getItem('theme')
 		if (savedTheme) {
